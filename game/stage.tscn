@@ -1,28 +1,48 @@
 [gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://stage.gd" type="Script" id=1]
-[ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://strandee/strandee.tscn" type="PackedScene" id=3]
-[ext_resource path="res://platform/platform.tscn" type="PackedScene" id=4]
+[ext_resource path="res://platform/platform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://strandee/strandee.tscn" type="PackedScene" id=4]
 [ext_resource path="res://world/mountain-background.tscn" type="PackedScene" id=5]
 
 [node name="Node2D" type="Node2D"]
 
 script/script = ExtResource( 1 )
 
-[node name="player" parent="." instance=ExtResource( 2 )]
+[node name="platform 4" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 123.483, 208.647 )
+
+[node name="platform 2" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -112.171, 56.8586 )
+
+[node name="player" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 31.9231, 31.8268 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
+[node name="KinematicBody2D" parent="." instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 165.425, 37.5402 )
 transform/scale = Vector2( 0.975632, 0.961218 )
 
-[node name="platform" parent="." instance=ExtResource( 4 )]
+[node name="platform" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 37.499, 104.58 )
+transform/pos = Vector2( 35.7662, 117.749 )
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 5 )]
+
+[node name="platform 3" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 167.495, 94.979 )
+
+[node name="platform 2 2" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -96.2294, 205.875 )
+
+[node name="platform" parent="platform 2 2" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 79.0133, -69.6565 )
 
 
