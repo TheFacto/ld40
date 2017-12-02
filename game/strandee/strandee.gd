@@ -5,7 +5,7 @@ extends KinematicBody2D
 # var b = "textvar"
 
 func _fixed_process(delta):
-	move(Vector2(0, 1))
+	move(Vector2(0, 0.5))
 
 func _ready():
 	set_fixed_process(true)
