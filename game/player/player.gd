@@ -8,6 +8,7 @@ const JUMP_SPEED = 125
 
 var linear_vel = Vector2()
 var jumping = false
+var strandees = 0
 
 func _fixed_process(delta):
 	_gravity(delta)
@@ -40,3 +41,11 @@ func _jump(delta):
 
 func _ready():
 	set_fixed_process(true)
+	
+func capture_strandee():
+	print("captured!")
+	strandees += 1
+	_update_backpack()
+	
+func _update_backpack():
+	get_node("Backpack/Sprite").set_frame(strandees)
