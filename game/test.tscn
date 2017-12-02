@@ -1,0 +1,18 @@
+[gd_scene format=1]
+
+[node name="Label" type="Label"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 76.0
+margin/bottom = 14.0
+text = "Hello World"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+
