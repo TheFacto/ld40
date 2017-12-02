@@ -1,14 +1,14 @@
 [gd_scene load_steps=5 format=1]
 
-[ext_resource path="res://world/TimedPlatform.gd" type="Script" id=1]
-[ext_resource path="res://world/dirt.png" type="Texture" id=2]
+[ext_resource path="res://platform/TimedPlatform.gd" type="Script" id=1]
+[ext_resource path="res://platform/timed-platform-sprite.tex" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
@@ -16,23 +16,26 @@ extents = Vector2( 10, 10 )
 [node name="TimedPlatform" type="KinematicBody2D"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
-time = 5
+time = 5.0
 
 [node name="Sprite" type="Sprite" parent="."]
 
 texture = ExtResource( 2 )
+hframes = 3
 
 [node name="Area2D" type="Area2D" parent="."]
 
+editor/display_folded = true
+visibility/visible = false
 input/pickable = true
-shapes/0/shape = SubResource( 1 )
+shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1.1, 0, 0, 1.1, 0, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -43,14 +46,33 @@ angular_damp = 1.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 
 transform/scale = Vector2( 1.1, 1.1 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-shape = SubResource( 2 )
+visibility/visible = false
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
+
+[node name="Node2D" type="Node2D" parent="."]
+
+z/z = 1
+
+[node name="Label" type="Label" parent="Node2D"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 14.0
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 
