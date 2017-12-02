@@ -10,6 +10,9 @@ var linear_vel = Vector2()
 var jumping = false
 var strandees = 0
 
+func get_strandees():
+	return strandees
+
 func _fixed_process(delta):
 	_gravity(delta)
 	_move_sideways(delta)

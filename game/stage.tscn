@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://stage.gd" type="Script" id=1]
 [ext_resource path="res://platform/platform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://strandee/strandee.tscn" type="PackedScene" id=4]
 [ext_resource path="res://world/mountain-background.tscn" type="PackedScene" id=5]
-[ext_resource path="res://platform/TimedPlatform.tscn" type="PackedScene" id=6]
+[ext_resource path="res://platform/WeightedPlatform.tscn" type="PackedScene" id=6]
+[ext_resource path="res://platform/TimedPlatform.tscn" type="PackedScene" id=7]
 
 [node name="Node2D" type="Node2D"]
 
@@ -61,10 +62,18 @@ transform/pos = Vector2( -96.2294, 205.875 )
 
 transform/pos = Vector2( 79.0133, -69.6565 )
 
+[node name="WeightedPlatform 2" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 143.962, 151.923 )
+
 [node name="timed_platforms" type="Node2D" parent="."]
 
-[node name="TimedPlatform" parent="timed_platforms" instance=ExtResource( 6 )]
+[node name="TimedPlatform" parent="timed_platforms" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 31.7332, 60.4727 )
+
+[node name="WeightedPlatform" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -25.21, 280.627 )
 
 
