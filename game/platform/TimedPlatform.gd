@@ -5,10 +5,14 @@ extends KinematicBody2D
 # var b = "textvar"
 var isPlayerTouching = false
 var currentTime = 0
-export var time = 5
+var spriteFrames = 1
+var interval = 0
+export var time = 5.0
 
 func _ready():
-	currentTime = time
+	currentTime = 0
+	spriteFrames = get_node("Sprite").get_hframes()
+	interval = (time/spriteFrames)
 	set_fixed_process(true)
 	get_node("Area2D").connect("body_enter", self, "_on_collision")
 	get_node("Area2D").connect("body_exit", self, "_on_collision_exit")
@@ -23,7 +27,11 @@ func _on_collision_exit(value):
 	
 func _fixed_process(delta):
 	if(isPlayerTouching):
-		currentTime -= delta
-	if(currentTime <= 0):
-		print("DEATH")
+		currentTime += delta
+	var currentFrame = int((currentTime / interval))
+	get_node("Node2D/Label").set_text("%0.2f" % (time - currentTime))
+	if(currentFrame < spriteFrames):
+		get_node("Sprite").set_frame(currentFrame)
+	if(currentTime >= time):
+		print("TimedPlatform::destroy")
 		queue_free()
