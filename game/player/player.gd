@@ -8,7 +8,6 @@ export var walk_speed = 100 # pixels/sec
 export var min_walk_speed = 30
 export var jump_speed = 125
 export var min_jump_speed = 60
-export var strandee_slow_down_modifier = .15 
 
 var linear_vel = Vector2()
 var jumping = false
@@ -58,12 +57,12 @@ func _get_weighted_player_velocity_x():
 	if (strandees == 0):
 		return walk_speed
 	else:
-		return max(walk_speed / (strandees * strandee_slow_down_modifier), min_walk_speed)
+		return max(walk_speed / strandees, min_walk_speed)
 		
 func _get_weighted_player_velocity_y():
 	if (strandees == 0):
 		return jump_speed
 	else:
-		return max(jump_speed/ (strandees * strandee_slow_down_modifier), min_jump_speed)
+		return max(jump_speed  / strandees, min_jump_speed)
 
 	
