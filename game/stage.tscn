@@ -23,9 +23,19 @@ transform/pos = Vector2( -112.171, 56.8586 )
 
 transform/pos = Vector2( 31.9231, 31.8268 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 4 )]
+[node name="strandee" parent="." instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 165.425, 37.5402 )
+transform/pos = Vector2( 166.088, 75.3552 )
+transform/scale = Vector2( 0.975632, 0.961218 )
+
+[node name="strandee1" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 32.7951, 98.5749 )
+transform/scale = Vector2( 0.975632, 0.961218 )
+
+[node name="strandee2" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -109.932, 37.5402 )
 transform/scale = Vector2( 0.975632, 0.961218 )
 
 [node name="platform" parent="." instance=ExtResource( 2 )]
@@ -35,6 +45,10 @@ transform/pos = Vector2( 35.7662, 117.749 )
 [node name="ParallaxBackground" parent="." instance=ExtResource( 5 )]
 
 [node name="platform 3" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 167.495, 94.979 )
+
+[node name="platform4" parent="." instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 167.495, 94.979 )
 

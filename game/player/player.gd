@@ -48,4 +48,4 @@ func capture_strandee():
 	_update_backpack()
 	
 func _update_backpack():
-	get_node("Backpack/Sprite").set_frame(strandees)
+	get_node("Backpack/Sprite").set_frame(strandees + 1)
