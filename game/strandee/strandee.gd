@@ -8,4 +8,11 @@ func _fixed_process(delta):
 	move(Vector2(0, 0.5))
 
 func _ready():
-	set_fixed_process(true)
+	pass
+	# set_fixed_process(true)
+
+
+func _on_Area2D_body_enter( body ):
+	if (body.has_method("capture_strandee")):
+		body.capture_strandee()
+		queue_free()

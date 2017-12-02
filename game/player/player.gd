@@ -52,8 +52,7 @@ func capture_strandee():
 	_update_backpack()
 	
 func _update_backpack():
-	get_node("Backpack/Sprite").set_frame(strandees)
-	
+	get_node("Backpack/Sprite").set_frame(strandees + 1)
 
 func _get_weighted_player_velocity_x():
 	if (strandees == 0):
