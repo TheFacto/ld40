@@ -22,6 +22,11 @@ transform/pos = Vector2( -112.171, 56.8586 )
 [node name="player" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 31.9231, 31.8268 )
+walk_speed = 100
+min_walk_speed = 30
+jump_speed = 125
+min_jump_speed = 60
+strandee_slow_down_modifier = 0.15
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 4 )]
 
