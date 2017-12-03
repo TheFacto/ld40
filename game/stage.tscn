@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://stage.gd" type="Script" id=1]
 [ext_resource path="res://platform/platform.tscn" type="PackedScene" id=2]
@@ -6,8 +6,9 @@
 [ext_resource path="res://platform/TimedPlatform.tscn" type="PackedScene" id=4]
 [ext_resource path="res://strandee/strandee.tscn" type="PackedScene" id=5]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://world/mountain-background.tscn" type="PackedScene" id=7]
-[ext_resource path="res://avalanche/avalanche.tscn" type="PackedScene" id=8]
+[ext_resource path="res://avalanche/avalanche.tscn" type="PackedScene" id=7]
+[ext_resource path="res://world/mountain-background.tscn" type="PackedScene" id=8]
+[ext_resource path="res://world/sky_01.tex" type="Texture" id=9]
 
 [node name="Node2D" type="Node2D"]
 
@@ -15,39 +16,36 @@ script/script = ExtResource( 1 )
 
 [node name="platforms" type="Node2D" parent="."]
 
-editor/display_folded = true
-
 [node name="stationary" type="Node2D" parent="platforms"]
-
-editor/display_folded = true
 
 [node name="platform 4" parent="platforms/stationary" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 123.483, 208.647 )
+transform/pos = Vector2( 275.306, 511.125 )
 
 [node name="platform 2" parent="platforms/stationary" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( -112.171, 56.8586 )
+transform/pos = Vector2( -89.0879, 121.271 )
+transform/scale = Vector2( 1, 1 )
 
 [node name="platform" parent="platforms/stationary" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 35.7662, 117.749 )
+transform/pos = Vector2( 88.3204, 205.339 )
 
 [node name="platform 3" parent="platforms/stationary" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 167.495, 94.979 )
+transform/pos = Vector2( 307.64, 218.773 )
 
 [node name="platform4" parent="platforms/stationary" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 167.495, 94.979 )
+transform/pos = Vector2( 307.64, 218.773 )
 
 [node name="platform 5" parent="platforms/stationary" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( -17.2161, 136.219 )
+transform/pos = Vector2( -87.2884, 291.546 )
 
 [node name="platform 2 2" parent="platforms/stationary" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( -96.2294, 205.875 )
+transform/pos = Vector2( -251.139, 202.016 )
 
 [node name="weighted" type="Node2D" parent="platforms"]
 
@@ -55,11 +53,11 @@ editor/display_folded = true
 
 [node name="WeightedPlatform" parent="platforms/weighted" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 150, 152 )
+transform/pos = Vector2( 132.482, 401.924 )
 
 [node name="WeightedPlatform 2" parent="platforms/weighted" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( -9, 274 )
+transform/pos = Vector2( -258.924, 492.392 )
 
 [node name="timed_platforms" type="Node2D" parent="platforms"]
 
@@ -75,28 +73,42 @@ editor/display_folded = true
 
 [node name="strandee" parent="strandees" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 166.088, 75.3552 )
+transform/pos = Vector2( 306.233, 199.15 )
 transform/scale = Vector2( 0.975632, 0.961218 )
 
 [node name="strandee1" parent="strandees" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 32.7951, 98.5749 )
+transform/pos = Vector2( 84.1813, 189.669 )
 transform/scale = Vector2( 0.975632, 0.961218 )
 
 [node name="strandee2" parent="strandees" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( -109.932, 37.5402 )
+transform/pos = Vector2( -86.8489, 101.953 )
 transform/scale = Vector2( 0.975632, 0.961218 )
 
 [node name="player" parent="." instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 47.4354, 50.9872 )
+transform/pos = Vector2( 27.5816, 21.7904 )
 transform/scale = Vector2( 0.515242, 0.515242 )
 
-[node name="ParallaxBackground" parent="." instance=ExtResource( 7 )]
-
-[node name="avalanche" parent="." instance=ExtResource( 8 )]
+[node name="avalanche" parent="." instance=ExtResource( 7 )]
 
 transform/pos = Vector2( -2.05054, -428.564 )
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 8 )]
+
+[node name="Sky" type="CanvasLayer" parent="."]
+
+layer = -2
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="Sprite" type="Sprite" parent="Sky"]
+
+transform/pos = Vector2( 1177.42, 507.972 )
+transform/scale = Vector2( 1.24712, 1.25308 )
+z/relative = false
+texture = ExtResource( 9 )
 
 
