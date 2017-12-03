@@ -90,11 +90,8 @@ transform/scale = Vector2( 0.975632, 0.961218 )
 
 [node name="player" parent="." instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 31.9231, 31.8268 )
-walk_speed = 100
-min_walk_speed = 30
-jump_speed = 125
-min_jump_speed = 60
+transform/pos = Vector2( 47.4354, 50.9872 )
+transform/scale = Vector2( 0.515242, 0.515242 )
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 7 )]
 
