@@ -10,11 +10,7 @@
 
 transform/pos = Vector2( 16.5857, 11.9417 )
 walk_speed = 300
-min_walk_speed = 30
-jump_speed = 125
-min_jump_speed = 60
 maxJumpTime = 0.5
-jumpSpeed = 500
 gravityFactor = 20
 
 [node name="platforms" type="Node2D" parent="."]
