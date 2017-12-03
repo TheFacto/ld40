@@ -25,6 +25,7 @@ speed = 0.75
 
 transform/pos = Vector2( -1.59296, 1.90671 )
 transform/scale = Vector2( 3.43808, 0.574774 )
+z/z = 6
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

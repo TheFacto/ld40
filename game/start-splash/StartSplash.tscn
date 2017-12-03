@@ -40,7 +40,6 @@ texture = ExtResource( 2 )
 
 [node name="mountain" type="Sprite" parent="."]
 
-visibility/visible = false
 transform/pos = Vector2( 962.521, 542.889 )
 transform/scale = Vector2( 1, 1.02128 )
 z/z = 1
@@ -48,7 +47,6 @@ texture = ExtResource( 3 )
 
 [node name="sky" type="Sprite" parent="."]
 
-visibility/visible = false
 transform/pos = Vector2( 958.914, 550.748 )
 transform/scale = Vector2( 1, 1.0083 )
 texture = ExtResource( 4 )

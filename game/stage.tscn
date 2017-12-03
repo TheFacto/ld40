@@ -19,16 +19,15 @@ transform/scale = Vector2( 1.63824, 1.29863 )
 walk_speed = 600
 maxJumpTime = 0.6
 jumpSpeed = 1000
-camera_ground_offset = -250
-camera_ground_speed = 500
 
 [node name="avalanche" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 4.10107, -787.41 )
-speed = 0.23
+speed = 0.7
 
 [node name="Node2D" type="Node2D" parent="."]
 
+editor/display_folded = true
 visibility/visible = false
 
 [node name="StreamPlayer" type="StreamPlayer" parent="Node2D"]

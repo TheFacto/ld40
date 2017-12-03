@@ -564,7 +564,6 @@ scale = Vector2( 1, 1 )
 
 [node name="Sprite" type="Sprite" parent="Sky"]
 
-visibility/visible = false
 transform/pos = Vector2( 1177.42, 507.972 )
 transform/scale = Vector2( 1.24712, 1.25308 )
 z/relative = false
