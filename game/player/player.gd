@@ -50,7 +50,6 @@ func _jump(delta):
 
 func _ready():
 	set_fixed_process(true)
-	connect("body_enter", self, "_on_collision")
 
 func capture_strandee():
 	print("captured!")
@@ -71,11 +70,6 @@ func _get_weighted_player_velocity_y():
 		return jump_speed
 	else:
 		return max(jump_speed  / strandees, min_jump_speed)
-		
-#this does not work
-func _on_collision(value):
-	if(value.get_name() == "avalanche"):
-		print("player touches avalanche")
 		
 func _dead(delta):
 	if ((linear_vel.y > FALLING_SPEED_DEATH_THRESHOLD) or alive == false):
