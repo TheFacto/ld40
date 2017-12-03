@@ -16,6 +16,8 @@ func _process(delta):
 	set_pos(Vector2(scale.x, scale.y + speed))
 
 func _on_collision(value):
-	if(value.get_name() == "player"):
+	if(value.get_name() == "player" and value.has_method("_kill")):
 		print("Avalanche touches player")
+		value._kill()
+	
 

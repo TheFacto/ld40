@@ -3,6 +3,7 @@ extends KinematicBody2D
 
 const GRAVITY_VEC = Vector2(0,100)
 const FLOOR_NORMAL = Vector2(0,-1) # the direction of the ground
+const FALLING_SPEED_DEATH_THRESHOLD = 375 #pixels/sec 
 
 export var walk_speed = 100 # pixels/sec
 export var min_walk_speed = 30
@@ -12,6 +13,7 @@ export var min_jump_speed = 60
 var linear_vel = Vector2()
 var jumping = false
 var strandees = 0
+var alive = true
 
 func get_strandees():
 	return strandees
@@ -20,6 +22,7 @@ func _fixed_process(delta):
 	_gravity(delta)
 	_move_sideways(delta)
 	_jump(delta)
+	_dead(delta)
 
 	# Commits the velocity to the kinematic body
 	linear_vel = move_and_slide(linear_vel, FLOOR_NORMAL)
@@ -47,6 +50,7 @@ func _jump(delta):
 
 func _ready():
 	set_fixed_process(true)
+	connect("body_enter", self, "_on_collision")
 
 func capture_strandee():
 	print("captured!")
@@ -67,5 +71,16 @@ func _get_weighted_player_velocity_y():
 		return jump_speed
 	else:
 		return max(jump_speed  / strandees, min_jump_speed)
+		
+#this does not work
+func _on_collision(value):
+	if(value.get_name() == "avalanche"):
+		print("player touches avalanche")
+		
+func _dead(delta):
+	if ((linear_vel.y > FALLING_SPEED_DEATH_THRESHOLD) or alive == false):
+		get_tree().reload_current_scene()
+		
+func _kill():
+	alive = false
 
-	
