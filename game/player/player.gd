@@ -38,10 +38,12 @@ func _move_sideways(delta):
 	
 	if (Input.is_action_pressed("player_left")):
 		target_speed = -1
+		face_left()
 		_walking_animation()
 		
 	if (Input.is_action_pressed("player_right")):
 		target_speed = 1
+		face_right()
 		_walking_animation()
 		
 	target_speed *= _get_weighted_player_velocity_x()
@@ -97,3 +99,9 @@ func _dead(delta):
 func kill():
 	alive = false
 
+func face_left():
+	get_node("Sprite").set_flip_h(true)
+	
+func face_right():
+	get_node("Sprite").set_flip_h(false)
+	
