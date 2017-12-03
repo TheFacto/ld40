@@ -24,6 +24,10 @@ transform/pos = Vector2( -112.171, 56.8586 )
 [node name="player" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 31.9231, 31.8268 )
+walk_speed = 100
+min_walk_speed = 30
+jump_speed = 125
+min_jump_speed = 60
 
 [node name="strandee" parent="." instance=ExtResource( 4 )]
 
@@ -56,7 +60,6 @@ transform/pos = Vector2( 167.495, 94.979 )
 
 [node name="platform 2 2" parent="." instance=ExtResource( 2 )]
 
-editor/display_folded = true
 transform/pos = Vector2( -96.2294, 205.875 )
 
 [node name="platform" parent="platform 2 2" instance=ExtResource( 2 )]
