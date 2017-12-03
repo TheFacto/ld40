@@ -7,7 +7,9 @@ func _ready():
 	strandeesLabel = get_node("strandees")
 	
 func _on_player_rescue_strandee(strandeesCount):
-	strandeesLabel.set_text("strandees: " + str(strandeesCount))
+	strandeesLabel.set_text(str(strandeesCount))
+	
+	
 	
 	
     
