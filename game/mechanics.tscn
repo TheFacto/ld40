@@ -1,32 +1,58 @@
 [gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://world/mountain-background.tscn" type="PackedScene" id=2]
-[ext_resource path="res://platform/platform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://platform/platform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://world/mountain-background.tscn" type="PackedScene" id=3]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 
 transform/pos = Vector2( 16.5857, 11.9417 )
-walk_speed = 100
+walk_speed = 300
 min_walk_speed = 30
 jump_speed = 125
 min_jump_speed = 60
-
-[node name="ParallaxBackground" parent="." instance=ExtResource( 2 )]
+maxJumpTime = 0.5
+jumpSpeed = 500
+gravityFactor = 20
 
 [node name="platforms" type="Node2D" parent="."]
 
-editor/display_folded = true
-visibility/visible = false
+[node name="platform2" parent="platforms" instance=ExtResource( 2 )]
 
-[node name="platform" parent="platforms" instance=ExtResource( 3 )]
+transform/pos = Vector2( 90.2547, 8.84563 )
 
-transform/pos = Vector2( 31.6094, 76.4506 )
+[node name="platform7" parent="platforms" instance=ExtResource( 2 )]
 
-[node name="platform1" parent="platforms" instance=ExtResource( 3 )]
+transform/pos = Vector2( 89.4402, 32.4666 )
 
-transform/pos = Vector2( 115.411, 149.226 )
+[node name="platform5" parent="platforms" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -327.166, 480.13 )
+
+[node name="platform6" parent="platforms" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -123.672, 422.85 )
+
+[node name="platform" parent="platforms" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 0.508514, 81.8689 )
+transform/scale = Vector2( 7.77339, 1 )
+
+[node name="platform4" parent="platforms" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 111.378, 570.254 )
+transform/scale = Vector2( 23.0143, 1 )
+
+[node name="platform3" parent="platforms" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 531.724, 142.427 )
+
+[node name="platform1" parent="platforms" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 614.711, 196.468 )
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 3 )]
 
 
