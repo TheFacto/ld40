@@ -21,6 +21,7 @@ var alive = true
 var is_still = false
 var jumpTime = 0
 
+signal rescue_strandee
 
 func get_strandees():
 	return strandees
@@ -89,6 +90,8 @@ func _ready():
 func capture_strandee():
 	strandees += 1
 	_update_backpack()
+	emit_signal("rescue_strandee", strandees)
+	
 
 func _update_backpack():
 	get_node("Backpack/Sprite").set_frame(strandees + 1)
@@ -106,3 +109,4 @@ func face_left():
 func face_right():
 	get_node("Sprite").set_flip_h(false)
 	
+
