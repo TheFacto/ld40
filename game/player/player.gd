@@ -78,6 +78,8 @@ func _jump(delta):
 		if(isOnFloor):
 			linear_vel.y = -jumpTime * -jumpSpeed
 			jumpTime = maxJumpTime
+			if(pressedJump):
+				get_node("SamplePlayer").play("player-jump")
 		elif(jumpTime > 0 && !isZero):
 			linear_vel.y = jumpTime * -jumpSpeed
 			jumpTime -= delta
