@@ -19,15 +19,14 @@ texture = ExtResource( 2 )
 
 [node name="strandees" type="Label" parent="."]
 
-rect/scale = Vector2( 4, 4 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 117.0
+margin/left = 115.0
 margin/top = 26.0
-margin/right = 147.0
-margin/bottom = 48.0
+margin/right = 237.0
+margin/bottom = 114.0
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0.113281, 0.107971, 0.107971, 1 )
 text = "0"
