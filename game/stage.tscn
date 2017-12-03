@@ -52,4 +52,6 @@ transform/pos = Vector2( -29.4331, 2051.91 )
 
 [connection signal="rescue_strandee" from="player" to="hud" method="_on_player_rescue_strandee"]
 
+[connection signal="rescue_completed" from="Ground" to="." method="win"]
+
 
