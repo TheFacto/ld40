@@ -3,7 +3,7 @@ extends KinematicBody2D
 
 const GRAVITY_VEC = Vector2(0,100)
 const FLOOR_NORMAL = Vector2(0,-1) # the direction of the ground
-const FALLING_SPEED_DEATH_THRESHOLD = 1000 #pixels/sec 
+const FALLING_SPEED_DEATH_THRESHOLD = 2000 #pixels/sec 
 
 const FLOAT_EPSILON = 0.0001
 
@@ -11,11 +11,8 @@ static func compare_floats(a, b, epsilon = FLOAT_EPSILON):
     return abs(a - b) <= epsilon
 
 export var walk_speed = 100 # pixels/sec
-export var min_walk_speed = 30
-export var jump_speed = 125
-export var min_jump_speed = 60
-export var maxJumpTime = 0.5
-export var jumpSpeed = 500
+export var maxJumpTime = 0.6
+export var jumpSpeed = 1000
 export var gravityFactor = 20
 
 var linear_vel = Vector2()
@@ -90,7 +87,6 @@ func _ready():
 	set_fixed_process(true)
 
 func capture_strandee():
-	print("captured!")
 	strandees += 1
 	_update_backpack()
 

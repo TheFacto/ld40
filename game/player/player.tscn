@@ -53,10 +53,10 @@ collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
-walk_speed = 100
-min_walk_speed = 30
-jump_speed = 125
-min_jump_speed = 60
+walk_speed = 1
+maxJumpTime = 3.0
+jumpSpeed = 500
+gravityFactor = 40
 
 [node name="Sprite" type="Sprite" parent="."]
 
@@ -77,6 +77,7 @@ _update_shape_index = 0
 [node name="Camera2D" type="Camera2D" parent="."]
 
 transform/pos = Vector2( 0, 0.795578 )
+offset = Vector2( 0, 250 )
 anchor_mode = 1
 rotating = false
 current = true

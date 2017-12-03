@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://stage.gd" type="Script" id=1]
 [ext_resource path="res://platform/platform.tscn" type="PackedScene" id=2]
@@ -6,8 +6,10 @@
 [ext_resource path="res://platform/TimedPlatform.tscn" type="PackedScene" id=4]
 [ext_resource path="res://strandee/strandee.tscn" type="PackedScene" id=5]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://world/mountain-background.tscn" type="PackedScene" id=7]
-[ext_resource path="res://avalanche/avalanche.tscn" type="PackedScene" id=8]
+[ext_resource path="res://avalanche/avalanche.tscn" type="PackedScene" id=7]
+[ext_resource path="res://world/mountain-background.tscn" type="PackedScene" id=8]
+[ext_resource path="res://world/sky_01.tex" type="Texture" id=9]
+[ext_resource path="res://world/ld40-theme.ogg" type="AudioStream" id=10]
 
 [node name="Node2D" type="Node2D"]
 
@@ -19,35 +21,34 @@ editor/display_folded = true
 
 [node name="stationary" type="Node2D" parent="platforms"]
 
-editor/display_folded = true
-
 [node name="platform 4" parent="platforms/stationary" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 123.483, 208.647 )
+transform/pos = Vector2( 303.931, 606.453 )
 
 [node name="platform 2" parent="platforms/stationary" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( -112.171, 56.8586 )
+transform/pos = Vector2( -280.316, 44.5553 )
 
 [node name="platform" parent="platforms/stationary" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 35.7662, 117.749 )
+transform/pos = Vector2( -206.198, 972.827 )
 
 [node name="platform 3" parent="platforms/stationary" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 167.495, 94.979 )
+transform/pos = Vector2( 146.99, 172.9 )
 
 [node name="platform4" parent="platforms/stationary" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 167.495, 94.979 )
+transform/pos = Vector2( 48.5635, 1405.28 )
 
 [node name="platform 5" parent="platforms/stationary" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( -17.2161, 136.219 )
+transform/pos = Vector2( 394.944, 1036.41 )
 
 [node name="platform 2 2" parent="platforms/stationary" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( -96.2294, 205.875 )
+transform/pos = Vector2( -304.824, 578.057 )
+transform/scale = Vector2( 1.0816, 1.35219 )
 
 [node name="weighted" type="Node2D" parent="platforms"]
 
@@ -55,11 +56,11 @@ editor/display_folded = true
 
 [node name="WeightedPlatform" parent="platforms/weighted" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 150, 152 )
+transform/pos = Vector2( 12.6134, -126.874 )
 
 [node name="WeightedPlatform 2" parent="platforms/weighted" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( -9, 274 )
+transform/pos = Vector2( -15.1516, 665.654 )
 
 [node name="timed_platforms" type="Node2D" parent="platforms"]
 
@@ -67,7 +68,8 @@ editor/display_folded = true
 
 [node name="TimedPlatform" parent="platforms/timed_platforms" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 31.7332, 60.4727 )
+transform/pos = Vector2( -52.1928, 291.425 )
+transform/scale = Vector2( 1.00457, 0.976281 )
 
 [node name="strandees" type="Node2D" parent="."]
 
@@ -75,28 +77,59 @@ editor/display_folded = true
 
 [node name="strandee" parent="strandees" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 166.088, 75.3552 )
-transform/scale = Vector2( 0.975632, 0.961218 )
+transform/pos = Vector2( -221.002, 844.933 )
+transform/scale = Vector2( 2.75537, 2.54373 )
 
 [node name="strandee1" parent="strandees" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 32.7951, 98.5749 )
-transform/scale = Vector2( 0.975632, 0.961218 )
+transform/pos = Vector2( 139.429, 50.6776 )
+transform/scale = Vector2( 2.64187, 2.34801 )
 
 [node name="strandee2" parent="strandees" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( -109.932, 37.5402 )
-transform/scale = Vector2( 0.975632, 0.961218 )
+transform/pos = Vector2( 295.676, 481.533 )
+transform/scale = Vector2( 2.43695, 2.34048 )
 
 [node name="player" parent="." instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 47.4354, 50.9872 )
-transform/scale = Vector2( 0.515242, 0.515242 )
+transform/pos = Vector2( -285.727, -145.403 )
+transform/scale = Vector2( 1.63824, 1.29863 )
+walk_speed = 600
+maxJumpTime = 0.6
+jumpSpeed = 1000
 
-[node name="ParallaxBackground" parent="." instance=ExtResource( 7 )]
+[node name="avalanche" parent="." instance=ExtResource( 7 )]
 
-[node name="avalanche" parent="." instance=ExtResource( 8 )]
+transform/pos = Vector2( 4.10107, -787.41 )
+speed = 0.23
 
-transform/pos = Vector2( -2.05054, -428.564 )
+[node name="ParallaxBackground" parent="." instance=ExtResource( 8 )]
+
+[node name="Sky" type="CanvasLayer" parent="."]
+
+layer = -2
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="Sprite" type="Sprite" parent="Sky"]
+
+transform/pos = Vector2( 1177.42, 507.972 )
+transform/scale = Vector2( 1.24712, 1.25308 )
+z/relative = false
+texture = ExtResource( 9 )
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="StreamPlayer" type="StreamPlayer" parent="Node2D"]
+
+stream/stream = ExtResource( 10 )
+stream/play = true
+stream/loop = true
+stream/volume_db = 0.0
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
 
 
