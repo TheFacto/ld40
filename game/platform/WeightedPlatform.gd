@@ -3,9 +3,7 @@ extends RigidBody2D
 export var max_strandees = 2
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
-	pass
+	get_node("Node2D/Label").set_text(String(max_strandees))
 
 
 func _on_Area2D_body_enter( body ):

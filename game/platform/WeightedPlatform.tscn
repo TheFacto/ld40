@@ -1,17 +1,23 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://platform/WeightedPlatform.gd" type="Script" id=1]
-[ext_resource path="res://platform/platform_spritesheet.tex" type="Texture" id=2]
+[ext_resource path="res://fonts/Oswald-SemiBold.fnt" type="BitmapFont" id=2]
+[ext_resource path="res://platform/weighted-platform.tex" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 19.1326, 10 )
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 63.2695, 15.4122 )
+
+[sub_resource type="Animation" id=4]
 
 resource/name = "dissapear"
-length = 0.5
+length = 1.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -19,22 +25,27 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0, 0.5 ),
+"times": FloatArray( 0, 1 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ 0, 5 ]
+"values": [ 0, 2 ]
 }
-
-[sub_resource type="RectangleShape2D" id=3]
-
-custom_solver_bias = 0.0
-extents = Vector2( 63.2695, 15.4122 )
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visibility/opacity")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
 
 [node name="WeightedPlatform" type="RigidBody2D"]
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 3.22083, 0, 0, 1, -0.343658, 0 )
+shapes/0/transform = Matrix32( 6.05491, 0, 0, 2.56266, -4.66618, -19.6511 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -56,27 +67,32 @@ damp_override/angular = -1.0
 script/script = ExtResource( 1 )
 max_strandees = 2
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
 
-texture = ExtResource( 2 )
-hframes = 6
+z/z = 1
 
-[node name="animation" type="AnimationPlayer" parent="Sprite"]
+[node name="Label" type="Label" parent="Node2D"]
 
-playback/process_mode = 1
-playback/default_blend_time = 0.0
-root/root = NodePath("..")
-anims/dissapear = SubResource( 2 )
-playback/active = true
-playback/speed = 1.0
-blend_times = [  ]
-autoplay = ""
+rect/rotation = 8.44862
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 15.0
+margin/top = 18.0
+margin/right = 55.0
+margin/bottom = 40.0
+custom_fonts/font = ExtResource( 2 )
+text = "Count"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [node name="Area2D" type="Area2D" parent="."]
 
 input/pickable = true
 shapes/0/shape = SubResource( 3 )
-shapes/0/transform = Matrix32( 1.00871, 0, 0, 1, -0.577438, 0 )
+shapes/0/transform = Matrix32( 1.84, 0, 0, 1.80158, -5.1961, -20.458 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -85,22 +101,38 @@ angular_damp = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 
-transform/pos = Vector2( -0.577438, 0 )
-transform/scale = Vector2( 1.00871, 1 )
+transform/pos = Vector2( -5.1961, -20.458 )
+transform/scale = Vector2( 1.84, 1.80158 )
 shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( -0.343658, 0 )
-transform/scale = Vector2( 3.22083, 1 )
+transform/pos = Vector2( -4.66618, -19.6511 )
+transform/scale = Vector2( 6.05491, 2.56266 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[connection signal="finished" from="Sprite/animation" to="." method="_on_animation_finished"]
+[node name="Sprite" type="Sprite" parent="."]
+
+texture = ExtResource( 3 )
+hframes = 3
+
+[node name="animation" type="AnimationPlayer" parent="Sprite"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/dissapear = SubResource( 4 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
 
 [connection signal="body_enter" from="Area2D" to="." method="_on_Area2D_body_enter"]
+
+[connection signal="finished" from="Sprite/animation" to="." method="_on_animation_finished"]
 
 
