@@ -57,6 +57,9 @@ walk_speed = 100
 min_walk_speed = 30
 jump_speed = 125
 min_jump_speed = 60
+maxJumpTime = 0.5
+jumpSpeed = 500
+gravityFactor = 20
 
 [node name="Sprite" type="Sprite" parent="."]
 
