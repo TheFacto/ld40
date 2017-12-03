@@ -1,5 +1,4 @@
-*.exe
-*.pkg
-*.pck
-*.zip
-
+/*.exe
+/*.pkg
+/*.pck
+/*.zip
