@@ -68,7 +68,7 @@ func _move_sideways(delta):
 func _walking_animation():
 	is_still = false
 	var anim = get_node("animation")
-	if (not anim.is_playing() or (anim.is_playing() and anim.get_current_animation() != "walk")):
+	if (not anim.is_playing() or (anim.is_playing() and anim.get_current_animation() != "walk" and is_move_and_slide_on_floor())):
 		anim.play("walk")
 	
 func _detect_still():
@@ -87,6 +87,7 @@ func _jump(delta):
 			jumpTime = maxJumpTime
 			if(pressedJump):
 				get_node("SamplePlayer").play("player-jump")
+				get_node("animation").play("jump")
 		elif(jumpTime > 0 && !isZero):
 			linear_vel.y = jumpTime * -jumpSpeed
 			jumpTime -= delta
@@ -104,7 +105,8 @@ func capture_strandee():
 	
 
 func _update_backpack():
-	get_node("Backpack/Sprite").set_frame(strandees + 1)
+	# get_node("Backpack/Sprite").set_frame(strandees + 1)
+	pass
 		
 func _dead(delta):
 	if ((linear_vel.y > FALLING_SPEED_DEATH_THRESHOLD) or not alive):
