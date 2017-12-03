@@ -72,7 +72,7 @@ func _get_weighted_player_velocity_y():
 		return max(jump_speed  / strandees, min_jump_speed)
 		
 func _dead(delta):
-	if ((linear_vel.y > FALLING_SPEED_DEATH_THRESHOLD) or alive == false):
+	if ((linear_vel.y > FALLING_SPEED_DEATH_THRESHOLD) or not alive):
 		get_tree().reload_current_scene()
 		
 func kill():
