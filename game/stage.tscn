@@ -26,7 +26,6 @@ speed = 0.23
 
 [node name="Node2D" type="Node2D" parent="."]
 
-editor/display_folded = true
 visibility/visible = false
 
 [node name="StreamPlayer" type="StreamPlayer" parent="Node2D"]

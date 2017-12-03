@@ -33,6 +33,7 @@ func _fixed_process(delta):
 	_dead(delta)
 	_detect_still()
 	_gravity(delta)
+	_win()
 
 	# Commits the velocity to the kinematic body
 	linear_vel = move_and_slide(linear_vel, FLOOR_NORMAL)
@@ -111,4 +112,7 @@ func face_left():
 func face_right():
 	get_node("Sprite").set_flip_h(false)
 	
-
+func _win():
+	# change this for when the bottom is reached
+	if (Input.is_action_pressed("force_win")):
+		get_tree().change_scene("res://win-screen/WinScreen.tscn")
