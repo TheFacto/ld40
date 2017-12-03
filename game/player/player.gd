@@ -52,7 +52,6 @@ func _move_sideways(delta):
 func _walking_animation():
 	is_still = false
 	var anim = get_node("animation")
-	print(anim.get_current_animation())
 	if (not anim.is_playing() or (anim.is_playing() and anim.get_current_animation() != "walk")):
 		anim.play("walk")
 	
