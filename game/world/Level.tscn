@@ -15,11 +15,9 @@ editor/display_folded = true
 
 [node name="stationary" type="Node2D" parent="platforms"]
 
-editor/display_folded = true
-
 [node name="platform 4" parent="platforms/stationary" instance=ExtResource( 1 )]
 
-transform/pos = Vector2( 352.367, 654.889 )
+transform/pos = Vector2( 503.277, 788.943 )
 
 [node name="platform 2" parent="platforms/stationary" instance=ExtResource( 1 )]
 
@@ -27,23 +25,19 @@ transform/pos = Vector2( 1.5668, -1.05719 )
 
 [node name="platform" parent="platforms/stationary" instance=ExtResource( 1 )]
 
-transform/pos = Vector2( -206.198, 972.827 )
+transform/pos = Vector2( -305.046, 965.452 )
 
 [node name="platform 3" parent="platforms/stationary" instance=ExtResource( 1 )]
 
 transform/pos = Vector2( 340.081, 108.165 )
 
-[node name="platform5" parent="platforms/stationary" instance=ExtResource( 1 )]
-
-transform/pos = Vector2( 515.453, 428.844 )
-
 [node name="platform4" parent="platforms/stationary" instance=ExtResource( 1 )]
 
-transform/pos = Vector2( 48.5635, 1405.28 )
+transform/pos = Vector2( -23.2065, 1333.51 )
 
-[node name="platform 5" parent="platforms/stationary" instance=ExtResource( 1 )]
+[node name="platform5" parent="platforms/stationary" instance=ExtResource( 1 )]
 
-transform/pos = Vector2( 394.944, 1036.41 )
+transform/pos = Vector2( 335.786, 1565.26 )
 
 [node name="platform 2 2" parent="platforms/stationary" instance=ExtResource( 1 )]
 
@@ -52,41 +46,63 @@ transform/scale = Vector2( 1.0816, 0.960337 )
 
 [node name="weighted" type="Node2D" parent="platforms"]
 
-editor/display_folded = true
-
 [node name="WeightedPlatform" parent="platforms/weighted" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( -241.046, 205.548 )
+transform/pos = Vector2( -199.454, 209.907 )
 max_strandees = 1
 
 [node name="WeightedPlatform1" parent="platforms/weighted" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( -107.43, 205.548 )
+transform/pos = Vector2( 31.7043, 209.93 )
 max_strandees = 1
 
 [node name="WeightedPlatform2" parent="platforms/weighted" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 24.5165, 205.548 )
-max_strandees = 1
-
-[node name="WeightedPlatform3" parent="platforms/weighted" instance=ExtResource( 2 )]
-
-transform/pos = Vector2( 715.981, -1.55719 )
-max_strandees = 1
-
-[node name="WeightedPlatform4" parent="platforms/weighted" instance=ExtResource( 2 )]
-
-transform/pos = Vector2( 717.652, 85.2934 )
+transform/pos = Vector2( 509.17, 385.741 )
 max_strandees = 1
 
 [node name="WeightedPlatform5" parent="platforms/weighted" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 717.652, 167.133 )
+transform/pos = Vector2( 284.232, 944.679 )
+max_strandees = 1
+
+[node name="WeightedPlatform7" parent="platforms/weighted" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 284.232, 1126.45 )
+max_strandees = 1
+
+[node name="WeightedPlatform8" parent="platforms/weighted" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 556.884, 1296.85 )
+max_strandees = 1
+
+[node name="WeightedPlatform6" parent="platforms/weighted" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -17.9579, 1135.54 )
+max_strandees = 1
+
+[node name="WeightedPlatform9" parent="platforms/weighted" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -313.331, 1492.26 )
+max_strandees = 1
+
+[node name="WeightedPlatform10" parent="platforms/weighted" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -313.331, 1674.02 )
+max_strandees = 1
+
+[node name="WeightedPlatform3" parent="platforms/weighted" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 715.981, 173.231 )
 max_strandees = 1
 
 [node name="WeightedPlatform 2" parent="platforms/weighted" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( -15.1516, 665.654 )
+transform/pos = Vector2( -17.0022, 676.758 )
+
+[node name="WeightedPlatform4" parent="platforms/weighted" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -609.618, 965.454 )
 
 [node name="timed_platforms" type="Node2D" parent="platforms"]
 
@@ -96,7 +112,7 @@ editor/display_folded = true
 
 [node name="strandee" parent="strandees" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( -221.002, 844.933 )
+transform/pos = Vector2( -309.177, 819.348 )
 transform/scale = Vector2( 2.75537, 2.54373 )
 
 [node name="strandee1" parent="strandees" instance=ExtResource( 3 )]
@@ -111,7 +127,27 @@ transform/scale = Vector2( 2.64187, 2.34801 )
 
 [node name="strandee2" parent="strandees" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 228.868, 371.299 )
+transform/pos = Vector2( -27.4537, 557.901 )
+transform/scale = Vector2( 2.43695, 2.34048 )
+
+[node name="strandee5" parent="strandees" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 495.13, 648.785 )
+transform/scale = Vector2( 2.43695, 2.34048 )
+
+[node name="strandee4" parent="strandees" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -619.105, 867.103 )
+transform/scale = Vector2( 2.43695, 2.34048 )
+
+[node name="strandee6" parent="strandees" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -22.2863, 1037.59 )
+transform/scale = Vector2( 2.43695, 2.34048 )
+
+[node name="strandee7" parent="strandees" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 334.434, 1448.84 )
 transform/scale = Vector2( 2.43695, 2.34048 )
 
 [node name="hazards" type="Node2D" parent="."]
@@ -123,6 +159,90 @@ editor/display_folded = true
 transform/pos = Vector2( 174.127, -164.016 )
 transform/scale = Vector2( 2.23024, 2.23024 )
 
+[node name="Spike19" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -569.001, 33.4481 )
+transform/rot = -90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike20" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -569.001, 117.86 )
+transform/rot = -90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike23" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -170.67, 563.4 )
+transform/rot = -90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike24" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -480.389, 379.152 )
+transform/rot = -90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike25" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -480.389, 481.397 )
+transform/rot = -90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike26" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -480.389, 576.825 )
+transform/rot = -90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike27" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -773.621, 593.23 )
+transform/rot = -90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike28" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -773.621, 699.859 )
+transform/rot = -90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike38" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -773.621, 798.287 )
+transform/rot = -90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike48" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -769.92, 1124 )
+transform/rot = -90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike73" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -513.282, 1693.07 )
+transform/rot = -90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike49" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -779.173, 1007.41 )
+transform/rot = -90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike21" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -569.001, -64.5303 )
+transform/rot = -90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike22" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -569.001, -151.957 )
+transform/rot = -90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
 [node name="Spike10" parent="hazards" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 195.84, 178.376 )
@@ -131,6 +251,156 @@ transform/scale = Vector2( 2.23024, 2.23024 )
 [node name="Spike14" parent="hazards" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 331.126, 460.641 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike29" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 892.983, 36.1723 )
+transform/rot = 90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike74" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 868.925, 167.568 )
+transform/rot = 90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike50" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 745.296, 365.627 )
+transform/rot = 90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike51" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 745.296, 504.226 )
+transform/rot = 90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike52" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 747.568, 640.552 )
+transform/rot = 90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike53" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 747.568, 785.966 )
+transform/rot = 90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike54" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 754.385, 931.381 )
+transform/rot = 90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike55" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 756.657, 1058.62 )
+transform/rot = 90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike56" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 754.385, 1201.76 )
+transform/rot = 90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike64" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 754.385, 1327.61 )
+transform/rot = 90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike65" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 756.235, 1455.3 )
+transform/rot = 90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike66" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 759.937, 1581.14 )
+transform/rot = 90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike70" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 761.987, 1691.87 )
+transform/rot = 90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike71" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 766.089, 1814.91 )
+transform/rot = 90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike72" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 764.038, 1948.2 )
+transform/rot = 90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike67" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 68.1293, 1834.99 )
+transform/rot = 90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike68" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 70.9188, 1940.99 )
+transform/rot = 90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike30" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 891.132, -52.6585 )
+transform/rot = 90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike31" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 892.983, -150.743 )
+transform/rot = 90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike32" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 896.684, -248.827 )
+transform/rot = 90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike33" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 896.684, -346.805 )
+transform/rot = 90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike34" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 896.684, -450.813 )
+transform/rot = 90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike35" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 896.684, -550.298 )
+transform/rot = 90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike36" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 896.684, -648.277 )
+transform/rot = 90.0
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike37" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 896.684, -752.285 )
+transform/rot = 90.0
 transform/scale = Vector2( 2.23024, 2.23024 )
 
 [node name="Spike15" parent="hazards" instance=ExtResource( 4 )]
@@ -145,7 +415,97 @@ transform/scale = Vector2( 2.23024, 2.23024 )
 
 [node name="Spike17" parent="hazards" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( -109.808, 423.896 )
+transform/pos = Vector2( 86.3601, 755.161 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike18" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 86.3601, 870.969 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike57" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 517.379, 953.392 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike60" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 276.795, 1245.79 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike69" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 506.46, 1446.75 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike61" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 213.177, 1604.79 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike62" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 135.925, 1672.95 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike63" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 70.0339, 1745.66 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike39" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 86.3601, 991.812 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike40" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -186.366, 1289.15 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike41" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -264.288, 1235.83 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike42" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -338.109, 1192.77 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike43" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -659.551, 1214.62 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike58" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -611.435, 1036.95 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike59" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -457.642, 905.717 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike44" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -620.369, 1312.93 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike45" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -581.505, 1409.16 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike46" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -542.642, 1499.85 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike47" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -501.927, 1586.83 )
 transform/scale = Vector2( 2.23024, 2.23024 )
 
 [node name="Spike11" parent="hazards" instance=ExtResource( 4 )]
@@ -160,7 +520,7 @@ transform/scale = Vector2( 2.23024, 2.23024 )
 
 [node name="Spike12" parent="hazards" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 586.667, -65.474 )
+transform/pos = Vector2( 582.966, -67.3247 )
 transform/scale = Vector2( 2.23024, 2.23024 )
 
 [node name="Spike13" parent="hazards" instance=ExtResource( 4 )]
@@ -204,6 +564,7 @@ scale = Vector2( 1, 1 )
 
 [node name="Sprite" type="Sprite" parent="Sky"]
 
+visibility/visible = false
 transform/pos = Vector2( 1177.42, 507.972 )
 transform/scale = Vector2( 1.24712, 1.25308 )
 z/relative = false
