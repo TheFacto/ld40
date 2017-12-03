@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://world/mountain-background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://platform/platform.tscn" type="PackedScene" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 16.5857, 11.9417 )
+walk_speed = 100
+min_walk_speed = 30
+jump_speed = 125
+min_jump_speed = 60
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 2 )]
+
+[node name="platforms" type="Node2D" parent="."]
+
+editor/display_folded = true
+visibility/visible = false
+
+[node name="platform" parent="platforms" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 31.6094, 76.4506 )
+
+[node name="platform1" parent="platforms" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 115.411, 149.226 )
+
+
