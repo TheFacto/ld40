@@ -14,17 +14,23 @@ export var walk_speed = 100 # pixels/sec
 export var maxJumpTime = 0.6
 export var jumpSpeed = 1000
 export var gravityFactor = 20
+export var camera_ground_offset = -250
+export var camera_ground_speed = 500
 
 var linear_vel = Vector2()
 var strandees = 0
 var alive = true
 var is_still = false
 var jumpTime = 0
+var is_playing_ground_camera_animation = false
 
 signal rescue_strandee
 
 func get_strandees():
 	return strandees
+
+func _process(delta):
+	_camera_animation(delta)
 
 func _fixed_process(delta):
 	#_gravity(delta)
@@ -89,6 +95,7 @@ func _jump(delta):
 
 func _ready():
 	set_fixed_process(true)
+	set_process(true)
 
 func capture_strandee():
 	strandees += 1
@@ -105,6 +112,22 @@ func _dead(delta):
 		
 func kill():
 	alive = false
+	
+func rescued():
+	get_node("Sprite").hide()
+	
+func on_close_to_ground():
+	is_playing_ground_camera_animation = true
+
+func _camera_animation(delta):
+	if (not is_playing_ground_camera_animation):
+		return
+	var camera = get_node("Camera2D")
+	if (camera.get_offset().y < camera_ground_offset):
+		is_playing_ground_camera_animation = false
+		return
+	# camera.set_v_offset(camera.get_v_offset() - (delta * camera_ground_speed))
+	camera.set_offset(camera.get_offset() - Vector2(0, delta * camera_ground_speed))
 
 func face_left():
 	get_node("Sprite").set_flip_h(true)
