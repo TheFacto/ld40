@@ -14,6 +14,7 @@ var linear_vel = Vector2()
 var jumping = false
 var strandees = 0
 var alive = true
+var is_still = false
 
 func get_strandees():
 	return strandees
@@ -23,6 +24,7 @@ func _fixed_process(delta):
 	_move_sideways(delta)
 	_jump(delta)
 	_dead(delta)
+	_detect_still()
 
 	# Commits the velocity to the kinematic body
 	linear_vel = move_and_slide(linear_vel, FLOOR_NORMAL)
@@ -33,12 +35,29 @@ func _gravity(delta):
 # Calculates new speeds based on whether the user has pressed left or right
 func _move_sideways(delta):
 	var target_speed = 0
+	
 	if (Input.is_action_pressed("player_left")):
 		target_speed = -1
+		_walking_animation()
+		
 	if (Input.is_action_pressed("player_right")):
 		target_speed = 1
+		_walking_animation()
+		
 	target_speed *= _get_weighted_player_velocity_x()
 	linear_vel.x = lerp( linear_vel.x, target_speed, 0.1 )
+	
+func _walking_animation():
+	is_still = false
+	var anim = get_node("animation")
+	print(anim.get_current_animation())
+	if (not anim.is_playing() or (anim.is_playing() and anim.get_current_animation() != "walk")):
+		anim.play("walk")
+	
+func _detect_still():
+	if (not is_still and is_move_and_slide_on_floor() and linear_vel.x == 0):
+		is_still = true
+		get_node("animation").play("still")
 
 func _jump(delta):
 	if (jumping and linear_vel.y > 0):
