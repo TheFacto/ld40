@@ -75,6 +75,6 @@ func _dead(delta):
 	if ((linear_vel.y > FALLING_SPEED_DEATH_THRESHOLD) or alive == false):
 		get_tree().reload_current_scene()
 		
-func _kill():
+func kill():
 	alive = false
 
