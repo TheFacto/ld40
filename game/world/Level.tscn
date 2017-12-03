@@ -1,0 +1,212 @@
+[gd_scene load_steps=7 format=1]
+
+[ext_resource path="res://platform/platform.tscn" type="PackedScene" id=1]
+[ext_resource path="res://platform/WeightedPlatform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://strandee/strandee.tscn" type="PackedScene" id=3]
+[ext_resource path="res://world/Spike.tscn" type="PackedScene" id=4]
+[ext_resource path="res://world/mountain-background.tscn" type="PackedScene" id=5]
+[ext_resource path="res://world/sky_01.tex" type="Texture" id=6]
+
+[node name="Level" type="Node2D"]
+
+[node name="platforms" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="stationary" type="Node2D" parent="platforms"]
+
+editor/display_folded = true
+
+[node name="platform 4" parent="platforms/stationary" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 352.367, 654.889 )
+
+[node name="platform 2" parent="platforms/stationary" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1.5668, -1.05719 )
+
+[node name="platform" parent="platforms/stationary" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -206.198, 972.827 )
+
+[node name="platform 3" parent="platforms/stationary" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 340.081, 108.165 )
+
+[node name="platform5" parent="platforms/stationary" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 515.453, 428.844 )
+
+[node name="platform4" parent="platforms/stationary" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 48.5635, 1405.28 )
+
+[node name="platform 5" parent="platforms/stationary" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 394.944, 1036.41 )
+
+[node name="platform 2 2" parent="platforms/stationary" instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -442.212, 254.302 )
+transform/scale = Vector2( 1.0816, 0.960337 )
+
+[node name="weighted" type="Node2D" parent="platforms"]
+
+editor/display_folded = true
+
+[node name="WeightedPlatform" parent="platforms/weighted" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -241.046, 205.548 )
+max_strandees = 1
+
+[node name="WeightedPlatform1" parent="platforms/weighted" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -107.43, 205.548 )
+max_strandees = 1
+
+[node name="WeightedPlatform2" parent="platforms/weighted" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 24.5165, 205.548 )
+max_strandees = 1
+
+[node name="WeightedPlatform3" parent="platforms/weighted" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 715.981, -1.55719 )
+max_strandees = 1
+
+[node name="WeightedPlatform4" parent="platforms/weighted" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 717.652, 85.2934 )
+max_strandees = 1
+
+[node name="WeightedPlatform5" parent="platforms/weighted" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 717.652, 167.133 )
+max_strandees = 1
+
+[node name="WeightedPlatform 2" parent="platforms/weighted" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -15.1516, 665.654 )
+
+[node name="timed_platforms" type="Node2D" parent="platforms"]
+
+[node name="strandees" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="strandee" parent="strandees" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -221.002, 844.933 )
+transform/scale = Vector2( 2.75537, 2.54373 )
+
+[node name="strandee1" parent="strandees" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -442.934, 110.144 )
+transform/scale = Vector2( 2.64187, 2.34801 )
+
+[node name="strandee3" parent="strandees" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 587.583, -142.057 )
+transform/scale = Vector2( 2.64187, 2.34801 )
+
+[node name="strandee2" parent="strandees" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 228.868, 371.299 )
+transform/scale = Vector2( 2.43695, 2.34048 )
+
+[node name="hazards" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="Spike3" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 174.127, -164.016 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike10" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 195.84, 178.376 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike14" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 331.126, 460.641 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike15" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 234.254, 502.396 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike16" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 134.042, 662.735 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike17" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -109.808, 423.896 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike11" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 519.859, -432.919 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike7" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 252.627, -249.196 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike12" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 586.667, -65.474 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike13" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 713.603, 251.865 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike8" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 321.105, -341.058 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike9" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 397.934, -432.919 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike4" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -241.754, 278.588 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike5" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -109.808, 278.588 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="Spike6" parent="hazards" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 18.7978, 280.258 )
+transform/scale = Vector2( 2.23024, 2.23024 )
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 5 )]
+
+[node name="Sky" type="CanvasLayer" parent="."]
+
+layer = -2
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="Sprite" type="Sprite" parent="Sky"]
+
+transform/pos = Vector2( 1177.42, 507.972 )
+transform/scale = Vector2( 1.24712, 1.25308 )
+z/relative = false
+texture = ExtResource( 6 )
+
+
