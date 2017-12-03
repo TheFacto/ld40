@@ -5,32 +5,43 @@ const GRAVITY_VEC = Vector2(0,100)
 const FLOOR_NORMAL = Vector2(0,-1) # the direction of the ground
 const FALLING_SPEED_DEATH_THRESHOLD = 375 #pixels/sec 
 
+const FLOAT_EPSILON = 0.0001
+
+static func compare_floats(a, b, epsilon = FLOAT_EPSILON):
+    return abs(a - b) <= epsilon
+
 export var walk_speed = 100 # pixels/sec
 export var min_walk_speed = 30
 export var jump_speed = 125
 export var min_jump_speed = 60
+export var maxJumpTime = 0.5
+export var jumpSpeed = 500
+export var gravityFactor = 20
 
 var linear_vel = Vector2()
-var jumping = false
 var strandees = 0
 var alive = true
 var is_still = false
+var jumpTime = 0
+
 
 func get_strandees():
 	return strandees
 
 func _fixed_process(delta):
-	_gravity(delta)
+	#_gravity(delta)
 	_move_sideways(delta)
 	_jump(delta)
 	_dead(delta)
 	_detect_still()
+	_gravity(delta)
 
 	# Commits the velocity to the kinematic body
 	linear_vel = move_and_slide(linear_vel, FLOOR_NORMAL)
 	
 func _gravity(delta):
-	linear_vel += delta * GRAVITY_VEC
+	if(!is_move_and_slide_on_floor()):
+		linear_vel.y = (linear_vel.y + gravityFactor)
 
 # Calculates new speeds based on whether the user has pressed left or right
 func _move_sideways(delta):
@@ -46,7 +57,7 @@ func _move_sideways(delta):
 		face_right()
 		_walking_animation()
 		
-	target_speed *= _get_weighted_player_velocity_x()
+	target_speed *= walk_speed
 	linear_vel.x = lerp( linear_vel.x, target_speed, 0.1 )
 	
 func _walking_animation():
@@ -61,12 +72,19 @@ func _detect_still():
 		get_node("animation").play("still")
 
 func _jump(delta):
-	if (jumping and linear_vel.y > 0):
-		jumping = false
-
-	if (Input.is_action_pressed("player_jump") and not jumping and is_move_and_slide_on_floor()):
-		linear_vel.y = -_get_weighted_player_velocity_y()
-		jumping = true	
+	var pressedJump = Input.is_action_pressed("player_jump")
+	var isOnFloor = is_move_and_slide_on_floor()
+	var isZero = compare_floats(jumpTime, 0)
+	
+	if(pressedJump || ((jumpTime < 0) && !isZero && !isOnFloor)):
+		if(isOnFloor):
+			linear_vel.y = -jumpTime * -jumpSpeed
+			jumpTime = maxJumpTime
+		elif(jumpTime > 0 && !isZero):
+			linear_vel.y = jumpTime * -jumpSpeed
+			jumpTime -= delta
+	else:
+		jumpTime = 0
 
 func _ready():
 	set_fixed_process(true)
@@ -78,18 +96,6 @@ func capture_strandee():
 
 func _update_backpack():
 	get_node("Backpack/Sprite").set_frame(strandees + 1)
-
-func _get_weighted_player_velocity_x():
-	if (strandees == 0):
-		return walk_speed
-	else:
-		return max(walk_speed / strandees, min_walk_speed)
-		
-func _get_weighted_player_velocity_y():
-	if (strandees == 0):
-		return jump_speed
-	else:
-		return max(jump_speed  / strandees, min_jump_speed)
 		
 func _dead(delta):
 	if ((linear_vel.y > FALLING_SPEED_DEATH_THRESHOLD) or not alive):
