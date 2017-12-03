@@ -3,7 +3,7 @@ extends KinematicBody2D
 
 const GRAVITY_VEC = Vector2(0,100)
 const FLOOR_NORMAL = Vector2(0,-1) # the direction of the ground
-const FALLING_SPEED_DEATH_THRESHOLD = 375 #pixels/sec 
+const FALLING_SPEED_DEATH_THRESHOLD = 1000 #pixels/sec 
 
 const FLOAT_EPSILON = 0.0001
 
