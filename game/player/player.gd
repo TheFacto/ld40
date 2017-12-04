@@ -4,6 +4,7 @@ extends KinematicBody2D
 const GRAVITY_VEC = Vector2(0,100)
 const FLOOR_NORMAL = Vector2(0,-1) # the direction of the ground
 const FALLING_SPEED_DEATH_THRESHOLD = 2000 #pixels/sec 
+const STRANDEE_FRAMES = 4
 
 const FLOAT_EPSILON = 0.0001
 
@@ -16,6 +17,9 @@ export var jumpSpeed = 1000
 export var gravityFactor = 20
 export var camera_ground_offset = -250
 export var camera_ground_speed = 500
+export var strandees_per_frame = 3
+
+
 
 var linear_vel = Vector2()
 var strandees = 0
@@ -69,12 +73,12 @@ func _walking_animation():
 	is_still = false
 	var anim = get_node("animation")
 	if (not anim.is_playing() or (anim.is_playing() and anim.get_current_animation() != "walk" and is_move_and_slide_on_floor())):
-		anim.play("walk")
+		anim.play("walk_" + str(_get_strandee_frame()))
 	
 func _detect_still():
 	if (not is_still and is_move_and_slide_on_floor() and linear_vel.x == 0):
 		is_still = true
-		get_node("animation").play("still")
+		get_node("animation").play("still_" + str(_get_strandee_frame()))
 
 func _jump(delta):
 	var pressedJump = Input.is_action_pressed("player_jump")
@@ -87,7 +91,7 @@ func _jump(delta):
 			jumpTime = maxJumpTime
 			if(pressedJump):
 				get_node("SamplePlayer").play("player-jump")
-				get_node("animation").play("jump")
+				get_node("animation").play("jump_" + str(_get_strandee_frame()))
 		elif(jumpTime > 0 && !isZero):
 			linear_vel.y = jumpTime * -jumpSpeed
 			jumpTime -= delta
@@ -103,11 +107,23 @@ func capture_strandee():
 	_update_backpack()
 	emit_signal("rescue_strandee", strandees)
 	
+func _get_strandee_frame():
+	var frame = int(strandees / strandees_per_frame)
+	if frame > STRANDEE_FRAMES:
+		return STRANDEE_FRAMES
+	else:
+		return frame
 
 func _update_backpack():
-	# get_node("Backpack/Sprite").set_frame(strandees + 1)
-	pass
+	var frame = _get_strandee_frame()
+	
+	# Disable all colliders
+	for i in range(STRANDEE_FRAMES):
+		get_node("Backpack_" + str(i)).set_trigger(true)
 		
+	# Enable just the collider for the current frame
+	get_node("Backpack_" + str(_get_strandee_frame())).set_trigger(false)
+
 func _dead(delta):
 	if ((linear_vel.y > FALLING_SPEED_DEATH_THRESHOLD) or not alive):
 		get_tree().reload_current_scene()
