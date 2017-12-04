@@ -6,13 +6,13 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 1050.34, 10 )
+extents = Vector2( 820.881, 10 )
 
 [node name="avalanche" type="Area2D"]
 
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 17.3323, 0, -63.8825 )
+shapes/0/transform = Matrix32( 1, 0, 0, 15.4995, 12.792, -59.7319 )
 shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -23,15 +23,15 @@ speed = 0.75
 
 [node name="Sprite" type="Sprite" parent="."]
 
-transform/pos = Vector2( 3.8556, 1.90671 )
-transform/scale = Vector2( 2.94278, 0.574774 )
+transform/pos = Vector2( 4.6025, 6.0412 )
+transform/scale = Vector2( 0.989353, 0.574774 )
 z/z = 6
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( 0, -63.8825 )
-transform/scale = Vector2( 1, 17.3323 )
+transform/pos = Vector2( 12.792, -59.7319 )
+transform/scale = Vector2( 1, 15.4995 )
 shape = SubResource( 1 )
 trigger = true
 _update_shape_index = 0
